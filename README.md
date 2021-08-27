@@ -1,6 +1,6 @@
 # super_agent_with_flutter
 
-A new Flutter application.
+A mobile application built with flutter to help users schedule transfer of money to other different users.
 
 ## Getting Started
 
