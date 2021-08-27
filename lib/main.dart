@@ -2,15 +2,25 @@ import 'package:flutter/material.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: Scaffold(
+    home: Home(),
+  ));
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text(
           "Testing",
-          style: TextStyle(color: Colors.green[100],
-          fontFamily: 'Allison',
+          style: TextStyle(
+            color: Colors.green[100],
+            fontFamily: 'Allison',
+            letterSpacing: 2.0,
           ),
         ),
       ),
-    )
-  ));
+    );
+  }
+}
+
