@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class SliderModel{
@@ -53,7 +55,18 @@ List<SliderModel> getSlides () {
   slides.add(sliderModel);
 
   //Second Slide
-
+  sliderModel.setTitle('It\'s a Quick One');
+  sliderModel.setDesc('Pay for Every Ride Using Helgg Wallet');
+  sliderModel.setImageAssetPath1('assets/onboard2.png');
+  sliderModel.setImageAssetPath2('assets/navigaton2.png');
+  slides.add(sliderModel);
+  
+  //Third Slide
+  sliderModel.setTitle('Scan QR Code To Ride');
+  sliderModel.setDesc('With Just One tap, you\'re good to go');
+  sliderModel.setImageAssetPath1('aassets/onboard3.png');
+  sliderModel.setImageAssetPath2('assets/navigation3');
+  slides.add(sliderModel);
 
   return slides;
 }
