@@ -36,6 +36,7 @@ class _HomeState extends State<Home> {
   ];
 
   List<SliderModel> slides = <SliderModel>[];
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -49,6 +50,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView.builder(
         itemCount: slides.length,
+          onPageChanged: (int? val) {
+            setState(() {
+              _currentIndex = val!;
+            });
+          },
           itemBuilder: (context, index) {
             return SliderTile(
               imageAssetPath1: slides[index].getImageImageAssetPath1(),
@@ -67,36 +73,43 @@ class SliderTile extends StatelessWidget {
   late String imageAssetPath1, imageAssetPath2, title, descriptions;
   SliderTile({required this.title, required this.descriptions, required this.imageAssetPath1, required this.imageAssetPath2});
 
+  PageController pageController = new PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget> [
-          Text(title, style: TextStyle(fontSize: 39, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-          SizedBox(height: 20),
-          Text(descriptions, textAlign: TextAlign.center,),
-          Image.asset(imageAssetPath1),
-          SizedBox(height: 70,),
-          Image.asset(imageAssetPath2),
-          SizedBox(height: 40,),
-          ElevatedButton(
-              onPressed: null,
-              child: Text('Let\'s Begin', style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.white,),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            Text(title, style: TextStyle(fontSize: 39, fontWeight: FontWeight.bold, color: Colors.blue[900]), textAlign: TextAlign.center,),
+            SizedBox(height: 20),
+            Text(descriptions, textAlign: TextAlign.center,),
+            Image.asset(imageAssetPath1),
+            SizedBox(height: 70,),
+            Image.asset(imageAssetPath2),
+            SizedBox(height: 40,),
+            ElevatedButton(
+                onPressed: () {
+                  pageController.animateToPage(getSlides().length + 1, duration: Duration(milliseconds: 400), curve: Curves.linear);
+                },
+                child: Text('Let\'s Begin', style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.white,),
+                ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.blue[900]),
+                fixedSize: MaterialStateProperty.all(Size(300, 50)),
+                shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0),
+                      side: BorderSide(color: Colors.transparent),
+                    ))
               ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
-              fixedSize: MaterialStateProperty.all(Size(250, 50)),
-              shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0),
-                    side: BorderSide(color: Colors.transparent),
-                  ))
-            ),
-            ),
-          // ElevatedButton(onPressed: onPressed, child: child),
-        ],
+              ),
+            // ElevatedButton(onPressed: onPressed, child: child),
+          ],
+        ),
       ),
     );
   }
