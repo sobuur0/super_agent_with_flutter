@@ -18,7 +18,6 @@ class _signInPageState extends State<signInPage> {
             Image.asset('assets/images/atlasImage.png'),
             Text('Atlas'),
             Text('Super Agent'),
-
           ],
         ),
       ),
