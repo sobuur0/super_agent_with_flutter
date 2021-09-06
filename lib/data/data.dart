@@ -68,5 +68,12 @@ List<SliderModel> getSlides () {
   // sliderModel.setImageAssetPath2('assets/navigation3.png');
   // slides.add(sliderModel);
 
+  // Fourth Slide
+  sliderModel.setTitle('Check If User is Signed In');
+  sliderModel.setDesc('Ask user if used app before');
+  sliderModel.setImageAssetPath2('assets/fast_loading.png');
+  sliderModel.setImageAssetPath1('assets/order_confirmed.png');
+  slides.add(sliderModel);
+
   return slides;
 }
