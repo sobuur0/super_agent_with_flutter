@@ -14,11 +14,10 @@ class _SignInPageState extends State<SignInPage> {
       bottomSheet: Container(
         color: Colors.white,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Image.asset('assets/images/order_confirmed.png'),
-            Image.asset('assets/images/fast_loading.png'),
-            Image.asset('assets/images/jogging.png'),
+            Expanded(child: Image.asset('assets/images/order_confirmed.png')),
+            Expanded(child: Image.asset('assets/images/fast_loading.png')),
+            Expanded(child: Image.asset('assets/images/jogging.png')),
           ],
         ),
       ),
