@@ -12,12 +12,26 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
+      body: Center(
         child: Column(
-          children: <Widget> [
+          children: <Widget>[
+            SizedBox(height: 100,),
             Image.asset('assets/images/atlasImage.png'),
-            Text('Atlas'),
-            Text('Super Agent'),
+            Text(
+              'Atlas',
+              style: TextStyle(
+                color: Color(0xFF263746),
+                fontSize: 20,
+              ),
+            ),
+            Text(
+              'Super Agent',
+              style: TextStyle(
+                color: Color(0xFF263746),
+              ),
+            ),
+            SizedBox(height: 90,),
+
           ],
         ),
       ),
