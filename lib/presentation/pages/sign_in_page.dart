@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class SignInPage extends StatefulWidget {
   @override
   _SignInPageState createState() => _SignInPageState();
@@ -12,10 +11,23 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      bottomSheet: Container(
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset('assets/images/order_confirmed.png'),
+            Image.asset('assets/images/fast_loading.png'),
+            Image.asset('assets/images/jogging.png'),
+          ],
+        ),
+      ),
       body: Center(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 100,),
+            SizedBox(
+              height: 100,
+            ),
             Image.asset('assets/images/atlasImage.png'),
             Text(
               'Atlas',
@@ -30,8 +42,9 @@ class _SignInPageState extends State<SignInPage> {
                 color: Color(0xFF263746),
               ),
             ),
-            SizedBox(height: 90,),
-
+            SizedBox(
+              height: 90,
+            ),
           ],
         ),
       ),
