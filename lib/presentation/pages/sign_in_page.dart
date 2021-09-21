@@ -8,6 +8,13 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  late bool _passwordVisible;
+
+  @override
+  void initState() {
+    _passwordVisible = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +45,9 @@ class _SignInPageState extends State<SignInPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: TextField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      hintText: 'Email',
+                      labelText: 'Email',
                       prefixIcon: Icon(
                         Icons.email,
                         color: Color(0xFF4F4F4F),
@@ -53,12 +61,25 @@ class _SignInPageState extends State<SignInPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: TextField(
+                    maxLength: 8,
+                    obscureText: !_passwordVisible,
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      hintText: 'xxxxxxxxxx',
-                      prefixIcon: Icon(Icons.email, color: Color(0xFF4F4F4F)),
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye_sharp,
+                      labelText: 'Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
                         color: Color(0xFF4F4F4F),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        },
+                        icon: Icon(
+                          _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                          color: Color(0xFF4F4F4F),
+                        ),
                       ),
                     ),
                   ),
@@ -75,7 +96,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 140, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
