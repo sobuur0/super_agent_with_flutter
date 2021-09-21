@@ -17,7 +17,7 @@ class _SignInPageState extends State<SignInPage> {
           child: Center(
             child: Column(
               children: <Widget>[
-                SizedBox(),
+                SizedBox(height: 100,),
                 Image.asset('assets/images/atlasImage.png'),
                 Text(
                   'Atlas',
@@ -80,13 +80,13 @@ class _SignInPageState extends State<SignInPage> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Expanded(
-                        child: Image.asset('assets/images/order_confirmed.png'),
+                          child:
+                              Image.asset('assets/images/order_confirmed.png'),
                       ),
                       Expanded(
-                        child: Image.asset('assets/images/fast_loading.png'),
+                          child: Image.asset('assets/images/fast_loading.png'),
                       ),
-                      Expanded(
-                        child: Image.asset('assets/images/jogging.png'),
+                      Expanded(child: Image.asset('assets/images/jogging.png'),
                       ),
                     ],
                   ),
