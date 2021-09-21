@@ -24,7 +24,9 @@ class _SignInPageState extends State<SignInPage> {
           child: Center(
             child: Column(
               children: <Widget>[
-                SizedBox(height: 100,),
+                SizedBox(
+                  height: 100,
+                ),
                 Image.asset('assets/images/atlasImage.png'),
                 Text(
                   'Atlas',
@@ -77,7 +79,9 @@ class _SignInPageState extends State<SignInPage> {
                           });
                         },
                         icon: Icon(
-                          _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           color: Color(0xFF4F4F4F),
                         ),
                       ),
@@ -96,18 +100,18 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 90, 0, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Expanded(
-                          child:
-                              Image.asset('assets/images/order_confirmed.png'),
+                        child: Image.asset('assets/images/order_confirmed.png'),
                       ),
                       Expanded(
-                          child: Image.asset('assets/images/fast_loading.png'),
+                        child: Image.asset('assets/images/fast_loading.png'),
                       ),
-                      Expanded(child: Image.asset('assets/images/jogging.png'),
+                      Expanded(
+                        child: Image.asset('assets/images/jogging.png'),
                       ),
                     ],
                   ),
