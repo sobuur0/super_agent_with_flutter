@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -64,8 +65,17 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 50,),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 240, 0, 0),
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: ActionButton(
+                      textButton: 'Log In',
+                      onTap: () {},
+                      buttonColor: Color(0xFF2553CF),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 140, 0, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
