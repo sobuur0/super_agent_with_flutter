@@ -32,10 +32,8 @@ class _SetPinPageState extends State<SetPinPage> {
             ),
             Text(
               'Set your Security Pin',
-              style: TextStyle(
+              style: AppStyles.latoRegular(
                 color: Color(0xFF4F4F4F),
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
               ),
             ),
             SizedBox(
@@ -45,9 +43,7 @@ class _SetPinPageState extends State<SetPinPage> {
               'To properly secure your funds, please set up a \npersonal 4-digit security PIN. \nYou’ll need it for every transaction you’ll make.',
               textAlign: TextAlign.center,
               style: AppStyles.robotoRegular(
-                  color: Color(0xFF26374680),
-                  size: 14
-              ),
+                  color: Color.fromRGBO(38, 55, 70, 0.5), size: 14),
             ),
             SizedBox(
               height: 70,

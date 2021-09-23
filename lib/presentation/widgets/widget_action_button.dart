@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:super_agent_with_flutter/constants/app_styles.dart';
 
 class ActionButton extends StatelessWidget {
   final String buttonText;
@@ -19,8 +20,9 @@ class ActionButton extends StatelessWidget {
         onPressed: onTap,
         child: Text(
           buttonText,
-          style: TextStyle(
+          style: AppStyles.latoRegular(
             color: Colors.white,
+            size: 14,
           ),
         ),
         style: ElevatedButton.styleFrom(
