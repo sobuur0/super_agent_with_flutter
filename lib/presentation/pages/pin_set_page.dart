@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class SetPinPage extends StatefulWidget {
@@ -43,10 +44,9 @@ class _SetPinPageState extends State<SetPinPage> {
             Text(
               'To properly secure your funds, please set up a \npersonal 4-digit security PIN. \nYou’ll need it for every transaction you’ll make.',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF26374680),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
+              style: AppStyles.robotoRegular(
+                  color: Color(0xFF26374680),
+                  size: 14
               ),
             ),
             SizedBox(
