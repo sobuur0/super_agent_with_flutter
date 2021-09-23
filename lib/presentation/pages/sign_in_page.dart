@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/pages/pin_set_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
@@ -32,14 +33,14 @@ class _SignInPageState extends State<SignInPage> {
                 Image.asset('assets/images/atlasImage.png'),
                 Text(
                   'Atlas',
-                  style: TextStyle(
+                  style: AppStyles.latoBold(
                     color: Color(0xFF263746),
-                    fontSize: 20,
+                    size: 25,
                   ),
                 ),
                 Text(
                   'Super Agent',
-                  style: TextStyle(
+                  style: AppStyles.latoRegular(
                     color: Color(0xFF263746),
                   ),
                 ),

@@ -43,4 +43,12 @@ class AppStyles {
     double size = 16,
   }) =>
       _lato(color, size, FontWeight.w400);
+
+  ///Returns a [TextStyle] that uses the default family roboto
+  ///With a default 'fontSize' of 14 and 'fontWeight' [FontWeight.w400]
+  static TextStyle latoBold({
+    required Color color,
+    double size = 20,
+  }) =>
+      _lato(color, size, FontWeight.w900);
 }
