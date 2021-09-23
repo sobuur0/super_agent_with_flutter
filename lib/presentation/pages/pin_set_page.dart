@@ -12,6 +12,7 @@ class _SetPinPageState extends State<SetPinPage> {
   late bool _passwordVisible;
 
   @override
+  // ignore: must_call_super
   void initState() {
     _passwordVisible = false;
   }

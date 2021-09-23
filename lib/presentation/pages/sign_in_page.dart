@@ -12,6 +12,7 @@ class _SignInPageState extends State<SignInPage> {
   late bool _passwordVisible;
 
   @override
+  // ignore: must_call_super
   void initState() {
     _passwordVisible = false;
   }
@@ -97,7 +98,10 @@ class _SignInPageState extends State<SignInPage> {
                   child: ActionButton(
                     buttonText: 'Log In',
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SetPinPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SetPinPage()));
                     },
                     buttonColor: Color(0xFF2553CF),
                   ),
