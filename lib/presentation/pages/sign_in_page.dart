@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:super_agent_with_flutter/presentation/pages/pin_set_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class SignInPage extends StatefulWidget {
@@ -96,7 +97,7 @@ class _SignInPageState extends State<SignInPage> {
                   child: ActionButton(
                     buttonText: 'Log In',
                     onTap: () {
-                      //Go to Pin Set Page
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SetPinPage()));
                     },
                     buttonColor: Color(0xFF2553CF),
                   ),
