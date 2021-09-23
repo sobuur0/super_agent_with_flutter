@@ -111,13 +111,15 @@ class _SetPinPageState extends State<SetPinPage> {
                 ),
               ),
             ),
-            SizedBox(height: 45,),
+            SizedBox(
+              height: 45,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: ActionButton(
-                  buttonText: 'Set Pin',
-                  onTap: () {},
-                  buttonColor: Color(0xFF2553CF),
+                buttonText: 'Set Pin',
+                onTap: () {},
+                buttonColor: Color(0xFF2553CF),
               ),
             ),
           ],
