@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:super_agent_with_flutter/presentation/pages/pin_set_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class SignInPage extends StatefulWidget {
@@ -8,6 +9,14 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  late bool _passwordVisible;
+
+  @override
+  // ignore: must_call_super
+  void initState() {
+    _passwordVisible = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +26,9 @@ class _SignInPageState extends State<SignInPage> {
           child: Center(
             child: Column(
               children: <Widget>[
-                SizedBox(height: 100,),
+                SizedBox(
+                  height: 100,
+                ),
                 Image.asset('assets/images/atlasImage.png'),
                 Text(
                   'Atlas',
@@ -38,8 +49,9 @@ class _SignInPageState extends State<SignInPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: TextField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      hintText: 'Email',
+                      labelText: 'Email',
                       prefixIcon: Icon(
                         Icons.email,
                         color: Color(0xFF4F4F4F),
@@ -53,12 +65,27 @@ class _SignInPageState extends State<SignInPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: TextField(
+                    maxLength: 8,
+                    obscureText: !_passwordVisible,
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      hintText: 'xxxxxxxxxx',
-                      prefixIcon: Icon(Icons.email, color: Color(0xFF4F4F4F)),
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye_sharp,
+                      labelText: 'Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
                         color: Color(0xFF4F4F4F),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        },
+                        icon: Icon(
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Color(0xFF4F4F4F),
+                        ),
                       ),
                     ),
                   ),
@@ -69,24 +96,29 @@ class _SignInPageState extends State<SignInPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: ActionButton(
-                    textButton: 'Log In',
-                    onTap: () {},
+                    buttonText: 'Log In',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SetPinPage()));
+                    },
                     buttonColor: Color(0xFF2553CF),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 140, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 90, 0, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Expanded(
-                          child:
-                              Image.asset('assets/images/order_confirmed.png'),
+                        child: Image.asset('assets/images/order_confirmed.png'),
                       ),
                       Expanded(
-                          child: Image.asset('assets/images/fast_loading.png'),
+                        child: Image.asset('assets/images/fast_loading.png'),
                       ),
-                      Expanded(child: Image.asset('assets/images/jogging.png'),
+                      Expanded(
+                        child: Image.asset('assets/images/jogging.png'),
                       ),
                     ],
                   ),
