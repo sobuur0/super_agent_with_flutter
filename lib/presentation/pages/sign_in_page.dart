@@ -94,8 +94,10 @@ class _SignInPageState extends State<SignInPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: ActionButton(
-                    textButton: 'Log In',
-                    onTap: () {},
+                    buttonText: 'Log In',
+                    onTap: () {
+                      //Go to Pin Set Page
+                    },
                     buttonColor: Color(0xFF2553CF),
                   ),
                 ),

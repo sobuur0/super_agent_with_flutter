@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class ActionButton extends StatelessWidget {
-  final String textButton;
+  final String buttonText;
   final VoidCallback onTap;
   final Color buttonColor;
 
   ActionButton({
-    required this.textButton,
+    required this.buttonText,
     required this.onTap,
     required this.buttonColor,
   });
@@ -18,7 +18,7 @@ class ActionButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onTap,
         child: Text(
-          textButton,
+          buttonText,
           style: TextStyle(
             color: Colors.white,
           ),
