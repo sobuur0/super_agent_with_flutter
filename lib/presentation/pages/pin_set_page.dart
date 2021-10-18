@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class SetPinPage extends StatefulWidget {
   @override
@@ -21,17 +20,6 @@ class _SetPinPageState extends State<SetPinPage> with TickerProviderStateMixin {
   void initState() {
     _passwordVisible = false;
 
-    linearAnimationController = AnimationController(
-        duration: const Duration(milliseconds: 1500), vsync: this);
-
-    linearAnimation =
-        CurvedAnimation(parent: linearAnimationController, curve: Curves.linear)
-          ..addListener(() {
-            setState(() {
-              animationValue = linearAnimation.value * 360;
-            });
-          });
-    linearAnimationController.repeat();
   }
 
   @override
