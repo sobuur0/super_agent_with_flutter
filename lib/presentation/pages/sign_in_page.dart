@@ -31,7 +31,7 @@ class _SignInPageState extends State<SignInPage> {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: 100,
+                    height: 90,
                   ),
                   Image.asset('assets/images/atlasImage.png'),
                   Text(
@@ -52,7 +52,8 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value) {},
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: 'Email',
@@ -68,8 +69,8 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: TextField(
-                      maxLength: 8,
+                    child: TextFormField(
+                      validator: (value) {},
                       obscureText: !_passwordVisible,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -111,7 +112,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 90, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
@@ -126,9 +127,6 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ],
                     ),
-                  ),
-                  TextField(
-
                   ),
                 ],
               ),
