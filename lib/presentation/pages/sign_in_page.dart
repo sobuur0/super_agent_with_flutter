@@ -31,7 +31,7 @@ class _SignInPageState extends State<SignInPage> {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: 100,
+                    height: 90,
                   ),
                   Image.asset('assets/images/atlasImage.png'),
                   Text(
