@@ -56,7 +56,8 @@ class _SetPinPageState extends State<SetPinPage> with TickerProviderStateMixin {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
+              child: TextFormField(
+                validator: (value) {},
                 obscureText: !_passwordVisible,
                 maxLength: 4,
                 keyboardType: TextInputType.number,
@@ -87,7 +88,8 @@ class _SetPinPageState extends State<SetPinPage> with TickerProviderStateMixin {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
+              child: TextFormField(
+                validator: (value) {},
                 obscureText: !_passwordVisible,
                 maxLength: 4,
                 keyboardType: TextInputType.number,
