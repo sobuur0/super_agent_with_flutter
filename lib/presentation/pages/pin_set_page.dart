@@ -2,19 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class SetPinPage extends StatefulWidget {
   @override
   _SetPinPageState createState() => _SetPinPageState();
 }
 
-class _SetPinPageState extends State<SetPinPage> {
+class _SetPinPageState extends State<SetPinPage> with TickerProviderStateMixin {
   late bool _passwordVisible;
+
+  late Animation<double> linearAnimation;
+  late AnimationController linearAnimationController;
+  double animationValue = 0;
 
   @override
   // ignore: must_call_super
   void initState() {
     _passwordVisible = false;
+
+    linearAnimationController = AnimationController(
+        duration: const Duration(milliseconds: 1500), vsync: this);
+
+    linearAnimation =
+        CurvedAnimation(parent: linearAnimationController, curve: Curves.linear)
+          ..addListener(() {
+            setState(() {
+              animationValue = linearAnimation.value * 360;
+            });
+          });
+    linearAnimationController.repeat();
   }
 
   @override
@@ -118,6 +135,9 @@ class _SetPinPageState extends State<SetPinPage> {
                 onTap: () {},
                 buttonColor: Color(0xFF2553CF),
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),
