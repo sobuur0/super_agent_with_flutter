@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
+import 'home_page.dart';
+
 class SetPinPage extends StatefulWidget {
   @override
   _SetPinPageState createState() => _SetPinPageState();
@@ -19,7 +21,6 @@ class _SetPinPageState extends State<SetPinPage> with TickerProviderStateMixin {
   // ignore: must_call_super
   void initState() {
     _passwordVisible = false;
-
   }
 
   @override
@@ -122,7 +123,14 @@ class _SetPinPageState extends State<SetPinPage> with TickerProviderStateMixin {
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: ActionButton(
                 buttonText: 'Set Pin',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
                 buttonColor: Color(0xFF2553CF),
               ),
             ),
