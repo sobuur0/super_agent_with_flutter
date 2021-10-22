@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                                 height: 10.0,
                               ),
                               Text(
-                                'Deposit',
+                                'Deposits',
                                 style: AppStyles.latoRegular(
                                   color: Colors.white,
                                   size: 13,
