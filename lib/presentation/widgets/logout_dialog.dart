@@ -25,7 +25,10 @@ class _LogoutDialogState extends State<LogoutDialog> {
               ),
               child: Text(
                 'Log Out',
-                style: AppStyles.latoBold(color: Color(0xFF4F4F4F), size: 18),
+                style: AppStyles.latoBold(
+                  color: Color(0xFF4F4F4F),
+                  size: 18,
+                ),
               ),
             ),
             Padding(
@@ -40,22 +43,25 @@ class _LogoutDialogState extends State<LogoutDialog> {
                 ),
               ),
             ),
-            SizedBox(height: 50,),
-            Row(
-              children: <Widget>[
-                Text(
-                  'BACK',
-                  style: AppStyles.robotoMedium(
-                    color: Color(0xFF153EAE),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40, 60, 25, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'BACK',
+                    style: AppStyles.robotoMedium(
+                      color: Color(0xFF153EAE),
+                    ),
                   ),
-                ),
-                Text(
-                  'LOG OUT',
-                  style: AppStyles.robotoMedium(
-                    color: Color(0xFF153EAE),
+                  Text(
+                    'LOG OUT',
+                    style: AppStyles.robotoMedium(
+                      color: Color(0xFF153EAE),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
