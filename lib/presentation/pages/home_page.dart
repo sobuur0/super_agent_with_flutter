@@ -228,9 +228,8 @@ class _HomePageState extends State<HomePage> {
                 child: InkWell(
                   onTap: () {
                     showDialog(
-                      context: context,
-                      builder: (BuildContext context) => LogoutDialog()
-                    );
+                        context: context,
+                        builder: (BuildContext context) => LogoutDialog());
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
