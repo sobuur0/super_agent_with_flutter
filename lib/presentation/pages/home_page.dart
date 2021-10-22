@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {},
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 45),
+                              horizontal: 20, vertical: 44),
                           child: Column(
                             children: [
                               Image(
