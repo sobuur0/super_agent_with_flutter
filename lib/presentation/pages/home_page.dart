@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/logout_dialog.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -27,7 +28,8 @@ class _HomePageState extends State<HomePage> {
                         fit: BoxFit.cover,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -68,7 +70,8 @@ class _HomePageState extends State<HomePage> {
                                   width: 15,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 25, 0, 0),
                                   child: Text(
                                     'GHC',
                                     style: AppStyles.latoRegular(
@@ -87,7 +90,10 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 15.0,),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 15.0,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -128,7 +134,8 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: <Widget>[
                               Image(
-                                image: AssetImage('assets/images/withdrawals.png'),
+                                image:
+                                    AssetImage('assets/images/withdrawals.png'),
                               ),
                               SizedBox(
                                 height: 10.0,
@@ -149,7 +156,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 15.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0, vertical: 15.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -163,7 +171,8 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               Image(
-                                image: AssetImage('assets/images/transactions.png'),
+                                image: AssetImage(
+                                    'assets/images/transactions.png'),
                               ),
                               SizedBox(
                                 height: 10.0,
@@ -211,12 +220,20 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Card(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 60,),
+                margin: EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 60,
+                ),
                 color: Color(0xFF2553CF),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) => LogoutDialog());
+                  },
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 20),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 120, vertical: 20),
                     child: Text(
                       'Log Out',
                       style: AppStyles.latoRegular(
