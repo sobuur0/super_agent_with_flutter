@@ -222,7 +222,7 @@ class _HomePageState extends State<HomePage> {
               Card(
                 margin: EdgeInsets.symmetric(
                   horizontal: 16,
-                  vertical: 60,
+                  vertical: 50,
                 ),
                 color: Color(0xFF2553CF),
                 child: InkWell(
@@ -242,6 +242,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Text(
+                'Contact Support',
+                style: AppStyles.latoRegular(
+                  color: Colors.black,
+                  size: 14,
                 ),
               ),
             ],
