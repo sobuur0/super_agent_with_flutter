@@ -41,6 +41,74 @@ class _DepositsPageState extends State<DepositsPage> {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Jane Doe',
+                              style: AppStyles.latoBold(
+                                color: Colors.white,
+                                size: 13,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              '234561020940832',
+                              style: AppStyles.latoBold(
+                                color: Colors.white,
+                                size: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Credit',
+                              style: AppStyles.latoBold(
+                                color: Colors.white,
+                                size: 13,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '209.72',
+                                  style: AppStyles.latoBold(
+                                      color: Colors.white, size: 30),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                  child: Text(
+                                    'NGN',
+                                    style: AppStyles.latoBold(
+                                      color: Colors.white,
+                                      size: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

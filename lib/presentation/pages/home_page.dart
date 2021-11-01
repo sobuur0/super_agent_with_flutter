@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                                   padding:
                                       const EdgeInsets.fromLTRB(0, 25, 0, 0),
                                   child: Text(
-                                    'GHC',
+                                    'NGN',
                                     style: AppStyles.latoRegular(
                                       size: 12,
                                       color: Colors.white,
