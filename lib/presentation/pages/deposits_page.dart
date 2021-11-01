@@ -132,7 +132,7 @@ class _DepositsPageState extends State<DepositsPage> {
                 validator: (value) {},
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  // errorText: '*Enter phone number to request credit from.',
+                  // errorText: '*Kindly Enter a Valid Number',
                   hintText: 'Phone no.',
                   hintStyle: AppStyles.latoRegular(
                     color: Color(0xFF4F4F4F),
@@ -154,7 +154,7 @@ class _DepositsPageState extends State<DepositsPage> {
                 validator: (value) {},
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  // errorText: '*Receive this much in credit (same as amount of cash received)',
+                  // errorText: '*Amount is higher than your credit!',
                   hintText: '0.00',
                   hintStyle: AppStyles.latoRegular(
                     color: Color(0xFF4F4F4F),
