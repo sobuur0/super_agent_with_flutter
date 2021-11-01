@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
-import 'package:super_agent_with_flutter/presentation/pages/deposit_page.dart';
 import 'package:super_agent_with_flutter/presentation/pages/deposits_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/logout_dialog.dart';
 

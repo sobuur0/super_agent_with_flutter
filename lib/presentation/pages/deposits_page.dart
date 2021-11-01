@@ -93,7 +93,8 @@ class _DepositsPageState extends State<DepositsPage> {
                                   width: 5,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 15, 0, 0),
                                   child: Text(
                                     'NGN',
                                     style: AppStyles.latoBold(
