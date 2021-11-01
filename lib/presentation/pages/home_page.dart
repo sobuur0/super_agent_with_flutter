@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/pages/deposit_page.dart';
+import 'package:super_agent_with_flutter/presentation/pages/deposits_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/logout_dialog.dart';
 
 class HomePage extends StatefulWidget {
@@ -100,7 +102,13 @@ class _HomePageState extends State<HomePage> {
                     Card(
                       color: Color(0xFF2553CF),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DepositsPage(),
+                              ));
+                        },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 40),
