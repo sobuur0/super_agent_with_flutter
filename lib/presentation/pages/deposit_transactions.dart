@@ -4,7 +4,8 @@ import 'package:super_agent_with_flutter/constants/app_styles.dart';
 
 class DepositTransactionsPage extends StatefulWidget {
   @override
-  _DepositTransactionsPageState createState() => _DepositTransactionsPageState();
+  _DepositTransactionsPageState createState() =>
+      _DepositTransactionsPageState();
 }
 
 class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
@@ -92,7 +93,7 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                                 ),
                                 Padding(
                                   padding:
-                                  const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                      const EdgeInsets.fromLTRB(0, 15, 0, 0),
                                   child: Text(
                                     'NGN',
                                     style: AppStyles.latoBold(
@@ -109,6 +110,16 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20,),
+              child: Text(
+                'Enter your Personal Security PIN code',
+                style: AppStyles.latoRegular(
+                  color: Color(0xFF4F4F4F),
+                  size: 14,
+                ),
               ),
             ),
           ],

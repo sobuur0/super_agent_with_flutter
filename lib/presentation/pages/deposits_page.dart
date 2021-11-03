@@ -17,6 +17,7 @@ class _DepositsPageState extends State<DepositsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            //TODO: should turn this container(USER DETAILS) to a reusable widget
             Container(
               color: Color(0xFF153EAE),
               child: Stack(
