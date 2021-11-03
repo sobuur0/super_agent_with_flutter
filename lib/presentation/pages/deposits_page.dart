@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
-import 'package:super_agent_with_flutter/presentation/pages/deposit-transactions.dart';
+import 'package:super_agent_with_flutter/presentation/pages/deposit_transactions.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class DepositsPage extends StatefulWidget {
