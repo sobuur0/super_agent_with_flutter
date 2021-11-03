@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/pages/deposit-transactions.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class DepositsPage extends StatefulWidget {
@@ -171,7 +172,14 @@ class _DepositsPageState extends State<DepositsPage> {
               padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
               child: ActionButton(
                 buttonText: 'Deposit',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DepositTransactionsPage(),
+                    ),
+                  );
+                },
                 buttonColor: Color(0xFF4D5F8D),
               ),
             ),
