@@ -15,6 +15,7 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
       body: SafeArea(
         child: Column(
           children: <Widget>[
+            //TODO: Should turn this to a reusable widget
             Container(
               color: Color(0xFF153EAE),
               child: Stack(
