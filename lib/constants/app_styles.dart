@@ -45,7 +45,7 @@ class AppStyles {
       _roboto(color, size, FontWeight.w500);
 
   ///Returns a [TextStyle] that uses the default family roboto
-  ///With a default 'fontSize' of 14 and 'fontWeight' [FontWeight.w400]
+  ///With a default 'fontSize' of 14 and 'fontWeight' [FontWeight.w700]
   static TextStyle latoRegular({
     required Color color,
     double size = 16,
