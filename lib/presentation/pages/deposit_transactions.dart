@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/cancel_deposit_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class DepositTransactionsPage extends StatefulWidget {
@@ -169,8 +170,8 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 30.0, vertical: 15.0),
                 child: ActionButton(
                   buttonText: 'Deposit',
                   onTap: () {},
@@ -178,8 +179,8 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 10.0),
                 child: Text(
                   'Transaction Details',
                   style: AppStyles.latoBold(
@@ -272,7 +273,12 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                 padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                 child: ActionButton(
                   buttonText: 'Cancel Transaction',
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => CancelDepositDialog(),
+                    );
+                  },
                   buttonColor: Color(0xFF2553CF),
                 ),
               )
