@@ -30,7 +30,6 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              //TODO: Should turn this to a reusable widget
               UserDetailsCard(),
               Padding(
                 padding: const EdgeInsets.symmetric(
