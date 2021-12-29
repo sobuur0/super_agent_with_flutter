@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/pages/deposit_successful_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/cancel_deposit_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
@@ -174,7 +175,14 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                     horizontal: 30.0, vertical: 15.0),
                 child: ActionButton(
                   buttonText: 'Deposit',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DepositSuccessfulPage(),
+                      ),
+                    );
+                  },
                   buttonColor: Color(0xFF4D5F8D),
                 ),
               ),
