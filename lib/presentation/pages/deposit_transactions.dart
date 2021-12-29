@@ -23,6 +23,7 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: ScrollPhysics(parent: NeverScrollableScrollPhysics()),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
