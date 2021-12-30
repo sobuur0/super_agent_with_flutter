@@ -39,7 +39,7 @@ class _DepositSuccessfulPageState extends State<DepositSuccessfulPage> {
               child: Text(
                 'Transaction went smoothly. You have your cash \nand someone else has their credit. Yippie!',
                 style: AppStyles.latoRegular(
-                  color: Color(0xFF26374680),
+                  color: Color(0xFFA9A9A9),
                   size: 14.0,
                 ),
               ),
