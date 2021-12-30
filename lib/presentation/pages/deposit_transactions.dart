@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/pages/deposit_successful_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/cancel_deposit_dialog.dart';
-import 'package:super_agent_with_flutter/presentation/widgets/not_enough_credit_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
@@ -189,7 +188,7 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                   onTap: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => NotEnoughCreditDialog(),
+                      builder: (BuildContext context) => CancelDepositDialog(),
                     );
                   },
                   buttonColor: Color(0xFF2553CF),
