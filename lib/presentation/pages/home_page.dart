@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/pages/deposits_page.dart';
 import 'package:super_agent_with_flutter/presentation/pages/withdrawal_page.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/home_sections_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/logout_dialog.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -99,73 +101,33 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Card(
-                      color: Color(0xFF2553CF),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DepositsPage(),
-                              ));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 40),
-                          child: Column(
-                            children: [
-                              Image(
-                                image: AssetImage('assets/images/deposits.png'),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                'Deposits',
-                                style: AppStyles.latoRegular(
-                                  color: Colors.white,
-                                  size: 13,
-                                ),
-                              ),
-                            ],
+                    HomeSectionsCard(
+                      title: 'Deposits',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DepositsPage(),
                           ),
-                        ),
-                      ),
+                        );
+                      },
+                      horizontal: 50,
+                      vertical: 40,
+                      sectionImage: AssetImage('assets/images/deposits.png'),
                     ),
-                    Card(
-                      color: Color(0xFF2553CF),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => WithdrawalPage(),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 40, vertical: 40),
-                          child: Column(
-                            children: <Widget>[
-                              Image(
-                                image:
-                                    AssetImage('assets/images/withdrawals.png'),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                'Withdrawal',
-                                style: AppStyles.latoRegular(
-                                  color: Colors.white,
-                                  size: 13,
-                                ),
-                              )
-                            ],
+                    HomeSectionsCard(
+                      title: 'Withdrawal',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => WithdrawalPage(),
                           ),
-                        ),
-                      ),
+                        );
+                      },
+                      horizontal: 40,
+                      vertical: 40,
+                      sectionImage: AssetImage('assets/images/withdrawals.png'),
                     ),
                   ],
                 ),
@@ -176,94 +138,45 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Card(
-                      color: Color(0xFF2553CF),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 44),
-                          child: Column(
-                            children: [
-                              Image(
-                                image: AssetImage(
-                                    'assets/images/transactions.png'),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                'Transaction History',
-                                style: AppStyles.latoRegular(
-                                  color: Colors.white,
-                                  size: 13,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    HomeSectionsCard(
+                      title: 'Transaction History',
+                      onTap: () {},
+                      horizontal: 20,
+                      vertical: 44,
+                      sectionImage:
+                          AssetImage('assets/images/transactions.png'),
                     ),
-                    Card(
-                      color: Color(0xFF2553CF),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 40),
-                          child: Column(
-                            children: <Widget>[
-                              Image(
-                                image: AssetImage('assets/images/support.png'),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                'Support',
-                                style: AppStyles.latoRegular(
-                                  color: Colors.white,
-                                  size: 13,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+                    HomeSectionsCard(
+                      title: 'Support',
+                      onTap: () {},
+                      horizontal: 50,
+                      vertical: 40,
+                      sectionImage: AssetImage('assets/images/support.png'),
                     ),
                   ],
                 ),
               ),
-              Card(
-                margin: EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 50,
-                ),
-                color: Color(0xFF2553CF),
-                child: InkWell(
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20,),
+                child: ActionButton(
+                  buttonText: 'Log Out',
                   onTap: () {
                     showDialog(
-                        context: context,
-                        builder: (BuildContext context) => LogoutDialog());
+                      context: context,
+                      builder: (BuildContext context) => LogoutDialog(),
+                    );
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 120, vertical: 20),
-                    child: Text(
-                      'Log Out',
-                      style: AppStyles.latoRegular(
-                        color: Colors.white,
-                        size: 14,
-                      ),
-                    ),
-                  ),
+                  buttonColor: Color(0xFF2553CF),
                 ),
               ),
-              Text(
-                'Contact Support',
-                style: AppStyles.latoRegular(
-                  color: Colors.black,
-                  size: 14,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  'Contact Support',
+                  style: AppStyles.latoRegular(
+                    color: Colors.black,
+                    size: 14,
+                  ),
                 ),
               ),
             ],
