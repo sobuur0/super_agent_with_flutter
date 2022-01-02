@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/pages/withdrawal_transactions_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
@@ -81,12 +82,12 @@ class _WithdrawalPageState extends State<WithdrawalPage> {
                 child: ActionButton(
                   buttonText: 'Withdraw',
                   onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => DepositTransactionsPage(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WithdrawalTransactionsPage(),
+                      ),
+                    );
                   },
                   buttonColor: Color(0xFF4D5F8D),
                 ),
