@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
-import 'package:super_agent_with_flutter/presentation/pages/deposit_transactions.dart';
+import 'package:super_agent_with_flutter/presentation/pages/deposit_transactions_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
