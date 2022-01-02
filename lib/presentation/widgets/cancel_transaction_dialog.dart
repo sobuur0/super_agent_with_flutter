@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 
-class CancelDepositDialog extends StatefulWidget {
-  const CancelDepositDialog({Key? key}) : super(key: key);
+class CancelTransactionDialog extends StatelessWidget {
+  final String title;
+  final String dialogDesc;
+  final String cancelText;
 
-  @override
-  _CancelDepositDialogState createState() => _CancelDepositDialogState();
-}
+  CancelTransactionDialog({
+    required this.title,
+    required this.dialogDesc,
+    required this.cancelText,
+  });
 
-class _CancelDepositDialogState extends State<CancelDepositDialog> {
-  @override
   Widget build(BuildContext context) {
     return Dialog(
       child: Container(
@@ -26,7 +28,7 @@ class _CancelDepositDialogState extends State<CancelDepositDialog> {
                 vertical: 20,
               ),
               child: Text(
-                'Cancel Deposit',
+                title,
                 style: AppStyles.latoBold(
                   color: Color(0xFF4F4F4F),
                   size: 18,
@@ -38,7 +40,7 @@ class _CancelDepositDialogState extends State<CancelDepositDialog> {
                 horizontal: 20,
               ),
               child: Text(
-                'Credit will not be transferred.\nYou must return any cash received \nfor this deposit!',
+                dialogDesc,
                 style: AppStyles.latoRegular(
                   color: Color(0xFF4F4F4F),
                   size: 16,
@@ -57,7 +59,7 @@ class _CancelDepositDialogState extends State<CancelDepositDialog> {
                     ),
                   ),
                   Text(
-                    'CANCEL DEPOSIT',
+                    cancelText,
                     style: AppStyles.robotoMedium(
                       color: Color(0xFF153EAE),
                     ),

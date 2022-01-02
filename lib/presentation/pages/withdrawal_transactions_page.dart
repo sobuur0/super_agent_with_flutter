@@ -1,20 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
-import 'package:super_agent_with_flutter/presentation/widgets/cancel_deposit_dialog.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/cancel_transaction_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
-
-import 'deposit_successful_page.dart';
 
 class WithdrawalTransactionsPage extends StatefulWidget {
   const WithdrawalTransactionsPage({Key? key}) : super(key: key);
 
   @override
-  _WithdrawalTransactionsPageState createState() => _WithdrawalTransactionsPageState();
+  _WithdrawalTransactionsPageState createState() =>
+      _WithdrawalTransactionsPageState();
 }
 
-class _WithdrawalTransactionsPageState extends State<WithdrawalTransactionsPage> {
+class _WithdrawalTransactionsPageState
+    extends State<WithdrawalTransactionsPage> {
   late bool _passwordVisible;
 
   @override
@@ -188,7 +188,12 @@ class _WithdrawalTransactionsPageState extends State<WithdrawalTransactionsPage>
                   onTap: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => CancelDepositDialog(),
+                      builder: (BuildContext context) => CancelTransactionDialog(
+                        title: 'Cancel Withdrawal',
+                        dialogDesc:
+                            'Credit will not be transferred.\nYou must return any cash received \nfor this withdrawal! ',
+                        cancelText: 'CANCEL WITHDRAWAL',
+                      ),
                     );
                   },
                   buttonColor: Color(0xFF2553CF),

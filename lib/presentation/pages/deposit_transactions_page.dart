@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/pages/deposit_successful_page.dart';
-import 'package:super_agent_with_flutter/presentation/widgets/cancel_deposit_dialog.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/cancel_transaction_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
@@ -188,7 +188,12 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                   onTap: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => CancelDepositDialog(),
+                      builder: (BuildContext context) => CancelTransactionDialog(
+                        title: 'Cancel Deposit',
+                        dialogDesc:
+                            'Credit will not be transferred.\nYou must return any cash received \nfor this deposit!',
+                        cancelText: 'CANCEL DEPOSIT',
+                      ),
                     );
                   },
                   buttonColor: Color(0xFF2553CF),
