@@ -4,6 +4,7 @@ import 'package:super_agent_with_flutter/constants/app_styles.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/cancel_transaction_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
+import 'enter_confirmation_code_page.dart';
 
 class WithdrawalTransactionsPage extends StatefulWidget {
   const WithdrawalTransactionsPage({Key? key}) : super(key: key);
@@ -80,12 +81,12 @@ class _WithdrawalTransactionsPageState
                 child: ActionButton(
                   buttonText: 'Withdraw',
                   onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => DepositSuccessfulPage(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EnterConfirmationCodePage(),
+                      ),
+                    );
                   },
                   buttonColor: Color(0xFF4D5F8D),
                 ),
