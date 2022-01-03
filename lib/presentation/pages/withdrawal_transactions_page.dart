@@ -1,25 +1,26 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
-import 'package:super_agent_with_flutter/presentation/pages/deposit_successful_page.dart';
-import 'package:super_agent_with_flutter/presentation/widgets/cancel_deposit_dialog.dart';
+import 'package:super_agent_with_flutter/presentation/widgets/cancel_transaction_dialog.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/user_details_card.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
+import 'enter_confirmation_code_page.dart';
 
-class DepositTransactionsPage extends StatefulWidget {
+class WithdrawalTransactionsPage extends StatefulWidget {
+  const WithdrawalTransactionsPage({Key? key}) : super(key: key);
+
   @override
-  _DepositTransactionsPageState createState() =>
-      _DepositTransactionsPageState();
+  _WithdrawalTransactionsPageState createState() =>
+      _WithdrawalTransactionsPageState();
 }
 
-class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
+class _WithdrawalTransactionsPageState
+    extends State<WithdrawalTransactionsPage> {
   late bool _passwordVisible;
 
   @override
   // ignore: must_call_super
-  void initState() {
-    _passwordVisible = false;
-  }
+  void initState() => _passwordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -78,12 +79,12 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 30.0, vertical: 15.0),
                 child: ActionButton(
-                  buttonText: 'Deposit',
+                  buttonText: 'Withdraw',
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DepositSuccessfulPage(),
+                        builder: (context) => EnterConfirmationCodePage(),
                       ),
                     );
                   },
@@ -114,7 +115,7 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
                 child: Text(
-                  'Deposit',
+                  'Withdrawal',
                   style: AppStyles.latoBold(
                     color: Color(0xFF4F4F4F),
                     size: 16.0,
@@ -188,7 +189,12 @@ class _DepositTransactionsPageState extends State<DepositTransactionsPage> {
                   onTap: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => CancelDepositDialog(),
+                      builder: (BuildContext context) => CancelTransactionDialog(
+                        title: 'Cancel Withdrawal',
+                        dialogDesc:
+                            'Credit will not be transferred.\nYou must return any cash received \nfor this withdrawal! ',
+                        cancelText: 'CANCEL WITHDRAWAL',
+                      ),
                     );
                   },
                   buttonColor: Color(0xFF2553CF),
