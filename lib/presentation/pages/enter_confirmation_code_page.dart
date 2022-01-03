@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:super_agent_with_flutter/constants/app_styles.dart';
+import 'package:super_agent_with_flutter/presentation/pages/withdrawal_successful_page.dart';
 import 'package:super_agent_with_flutter/presentation/widgets/widget_action_button.dart';
 
 class EnterConfirmationCodePage extends StatefulWidget {
@@ -92,7 +93,14 @@ class _EnterConfirmationCodePageState extends State<EnterConfirmationCodePage> {
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: ActionButton(
                 buttonText: 'Withdraw',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WithdrawalSuccessfulPage(),
+                    ),
+                  );
+                },
                 buttonColor: Color(0xFF4D5F8D),
               ),
             )
